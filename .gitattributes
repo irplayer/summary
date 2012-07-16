@@ -1,0 +1,18 @@
+* text=auto
+
+.* eol=lf
+*.md eol=lf
+*.js eol=lf
+*.json eol=lf
+*.htm eol=lf
+*.xml eol=lf
+*.css eol=lf
+*.php eol=lf
+*.conf eol=lf
+
+*.bat eol=crlf
+
+*.zip binary
+*.jpg binary
+*.png binary
+*.ttf binary
