@@ -1,0 +1,23 @@
+{
+  "name": "webclient",
+  "version": "1.0.0",
+  "description": "webclient",
+  "keywords": [
+    "web"
+  ],
+  "author": "lcf",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@git.oschina.net:cfgit/grunt.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-mincss": "^0.3.2",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
