@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=320, initial-scale=1" />
+	<title>jsmpeg streaming</title>
+	<style type="text/css">
+		body {
+			background: #333;
+			text-align: center;
+			margin-top: 10%;
+		}
+		
+		#videoCanvas {
+			/* Always stretch the canvas to 640x480, regardless of its
+			internal size. */
+			width: 640px;
+			height: 480px;
+		}
+	</style>
+</head>
+
+<body>
+	<code>ffmpeg -i rtsp://192.168.1.169:8556/h264 -f mpeg1video http://127.0.0.1:8082/hs/320/256</code>
+	<code>ffmpeg -i rtsp://192.168.1.64:554/h264/ch1/main/av_stream -f mpeg1video http://127.0.0.1:8082/hs/1280/720</code>
+	<code>ffmpeg -re -i rtsp://192.168.1.64:554/h264/ch1/main/av_stream -f mpeg1video -b 4000k -r 20 -vf scale=640:360 http://127.0.0.1:8082/hs/640/360</code>
+	<!-- The Canvas size specified here is the "initial" internal resolution. jsmpeg will
+		change this internal resolution to whatever the source provides. The size the
+		canvas is displayed on the website is dictated by the CSS style.
+	-->
+	<canvas id="videoCanvas" width="640" height="480">
+		<p>
+			Please use a browser that supports the Canvas Element, like
+			<a href="http://www.google.com/chrome">Chrome</a>,
+			<a href="http://www.mozilla.com/firefox/">Firefox</a>,
+			<a href="http://www.apple.com/safari/">Safari</a> or Internet Explorer 10
+		</p>
+	</canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+	var client = new WebSocket( 'ws://192.168.1.2:8084/' );
+	var canvas = document.getElementById('videoCanvas');
+	var player = new jsmpeg(client, {canvas:canvas, autoplay: true});
+	</script>
+</body>
+
+</html>
