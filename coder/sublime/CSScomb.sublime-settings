@@ -1,0 +1,39 @@
+{
+    "config": {
+        "always-semicolon": true,
+        "block-indent": "    ",
+        "color-case": "lower",
+        "color-shorthand": true,
+        "element-case": "lower",
+        "eof-newline": true,
+        "leading-zero": false,
+        "quotes": "single",
+        "remove-empty-rulesets": true,
+        "sort-order-fallback": "abc",
+        "strip-spaces": true,
+        "unitless-zero": true,
+        "vendor-prefix-align": true,
+        "space-after-colon": " ", // ':'
+        "space-before-colon": "",
+        "space-after-combinator": " ", // combinator (i.e. 'p > a')
+        "space-before-combinator": " ",
+        "space-after-opening-brace": " ", // '{'
+        "space-before-opening-brace": " ",
+        "space-before-closing-brace": " ", // '}'
+        "space-after-selector-delimiter": "\n",
+        "space-before-selector-delimiter": "",
+        "space-between-declarations": " ", // declarations (i.e. 'color: tomato')
+        "sort-order": [
+            ["display", "visibility", "float", "clear", "position", "z-index", "box-sizing"],
+            ["top", "right", "bottom", "left", "width", "min-width", "max-width", "height", "min-height", "max-height"],
+            ["margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left"],
+            ["overflow", "overflow-x", "overflow-y", "clip", "zoom", "flex-direction", "flex-order", "flex-pack", "flex-align"],
+            ["border", "border-width", "border-style", "border-color", "border-spacing", "border-collapse", "border-top", "border-right", "border-bottom", "border-left", "border-radius", "border-image"],
+            ["font", "font-family", "font-size", "font-weight", "font-style", "font-variant", "font-size-adjust", "font-stretch", "font-effect", "font-emphasize", "font-emphasize-position", "font-emphasize-style", "font-smooth"],
+            ["line-height", "text-align", "vertical-align", "white-space", "text-decoration", "text-indent", "text-justify", "letter-spacing", "word-spacing", "text-outline", "text-transform", "text-wrap", "word-wrap", "text-overflow", "word-break"],
+            ["color", "background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y", "background-clip", "background-origin", "background-size"],
+            ["list-style", "list-style-type", "list-style-position", "list-style-image"],
+            ["outline", "outline-width", "outline-style", "outline-color", "outline-offset", "opacity", "-webkit-box-shadow", "box-shadow", "text-shadow"]
+        ]
+    }
+}
