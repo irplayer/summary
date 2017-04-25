@@ -2,16 +2,17 @@
 
 .* eol=lf
 *.md eol=lf
-*.js eol=lf
-*.json eol=lf
-*.htm eol=lf
 *.xml eol=lf
 *.css eol=lf
 *.php eol=lf
 *.conf eol=lf
 
+*.js* eol=lf
+*.htm* eol=lf
+
 *.bat eol=crlf
 
+*.svg binary
 *.zip binary
 *.jpg binary
 *.png binary

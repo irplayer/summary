@@ -73,3 +73,21 @@ ErrorLogFormat "[%t] [%l] [pid %P] %F: %E: [client %a] %M"
     # Later in your ruleset you might check for this environment variable using a RewriteCond:
     RewriteCond %{ENV:rewritten} =1
     ```
+
+## *mod_ssl*
+
+#### *Enable*
+```
+sudo a2enmod ssl
+sudo apt-get install openssl
+openssl genrsa -out server.key 1024 (-des3)
+openssl req -new -key server.key -out server.csr
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+```
+
+```
+SSLEngine On
+SSLOptions +StrictRequire
+SSLCertificateFile /etc/ssl/certs/server.crt
+SSLCertificateKeyFile /etc/ssl/private/server.key
+```
