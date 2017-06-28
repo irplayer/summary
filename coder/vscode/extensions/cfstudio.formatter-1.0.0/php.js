@@ -53,7 +53,7 @@ function setSpace(code) {
     // `$$` `||` [>1]
     code = code.replace(/ ?([\&\|]{2}) ?/g, ' $1 ');
     // `,` [0, >1]
-    code = code.replace(/ *(,) ?/g, '$1 ');
+    code = code.replace(/ *(,) ?(?!\n)/g, '$1 ');
     // before `{` [1]
     code = code.replace(/\n* *(\{)/g, ' $1');
     // before `)` [1]
