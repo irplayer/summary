@@ -22,6 +22,13 @@ passwd lcf
 userdel lcf
 ```
 
+1、修改foo用户的uid
+
+# usermod -u 2005 foo
+2、修改foo组的gid
+
+# groupmod -g 3000 foo
+
 1. 为该用户添加限
 ```
 usermod -a -G adm lcf
