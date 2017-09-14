@@ -7,7 +7,7 @@ function formatCode(code) {
     // 设置缩进并去除尾随空格
     code = separatCode(code, /\r?\n/, indentSnippets, "\n");
     // 函数/类前添加空行
-    code = code.replace(/([^\{])\n+( *(public )?(function |class ))/g, '$1\n\n$2');
+    code = code.replace(/([^\{])\n+( *(public |private )?(function |class ))/g, '$1\n\n$2');
     // 仅保留一个空行
     code = code.replace(/(\n{2,})/g, '\n\n');
     code = separatCode(code, '"', formatSnippets);
@@ -62,5 +62,9 @@ function setSpace(code) {
     code = code.replace(/(\() */g, '$1 ');
     // blank `()` `[]`
     code = code.replace(/\(\s*\)/g, '()');
+    // after `if` `for` and `each`
+    code = code.replace(/(if|for|each)\s*\(/g, '$1 (');
+    // blank `else`
+    code = code.replace(/\}\s*else\s*\{/g, '} else {');
     return code;
 }
