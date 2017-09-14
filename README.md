@@ -4,9 +4,11 @@
 
 - [Regular Expressions](re/README.md)
 
+- [Apache](apache/README.md)
+
 - [Git](git/README.md)
 
-- [Apache](apache/README.md)
+- [GitLab](git/GitLab.md)
 
 - [vsFTPd](vsftpd/README.md)
 
