@@ -31,7 +31,7 @@ Flag | Syntax | Function
 `CO=NAME:VAL` | `cookie` | 设置一个 `cookie` 。完整的表达式为 `CO=NAME:VAL:domain[:lifetime[:path[:secure[:httponly]]]]`
 `DPI` | `discardpath` | Causes the PATH_INFO portion of the rewritten URI to be discarded.
 `E=[!]VAR[:VAL]` | `env` | 设置环境变量。
-`END` | | Stop the rewriting process immediately and don't apply any more rules. Also prevents further execution of rewrite rules in per-directory and .htaccess context.` | `Available in 2.3.9 and later)
+`END` | | Stop the rewriting process immediately and don't apply any more rules. Also prevents further execution of rewrite rules in per-directory and .htaccess context.
 `F` | `forbidden` | 返回当前链接禁止访问 `403 FORBIDDEN` 给浏览器。
 `G` | `gone` | 返回当前链接已废弃 `410 GONE` 给浏览器。
 `H=Content-handler` | `handler` | 强制指定目标文件的内容处理器为 `Content-handler` 。例如，用来模拟 `mod_alias` 模块的 `ScriptAlias` 指令，以强制映射文件夹内的所有文件都由 `cgi-script` 处理器处理。
@@ -44,7 +44,7 @@ Flag | Syntax | Function
 `PT` | `passthrough` | 传递给下一个处理。
 `QSA` | `qsappend` | 追加请求字符串。
 `QSD` | `qsdiscard` | Discard any query string attached to the incoming URI.
-`QSL` | `qslast` | Interpret the last (right-most) question mark as the query string delimiter, instead of the first` | `left-most) as normally used. Available in 2.4.19 and later.
+`QSL` | `qslast` | Interpret the last (right-most) question mark as the query string delimiter, instead of the first (left-most) as normally used. Available in 2.4.19 and later.
 `R[=code]` | `redirect` | 强制外部重定向， `code` 默认为 `302` 。
 `S=num` | `skip` | 跳过 `num` 条规则。
 `T=MIME-type` | `type` | 强制 `MIME` 类型
@@ -83,11 +83,9 @@ Flag | Syntax | Function
     # Remove mykey=???
     RewriteCond %{QUERY_STRING} (.*(?:^|&))mykey=([^&]*)&?(.*)&?$
     RewriteRule (.*) $1?%1%3
-
     # Copy from query string to PATH_INFO
     RewriteCond %{QUERY_STRING} (.*(?:^|&))mykey=([^&]*)&?(.*)&?$
     RewriteRule (.*) $1 / products / %2 / ? [PT]
-
     # Capture the value of mykey in the query string
     RewriteCond %{QUERY_STRING} (.*(?:^|&))mykey=([^&]*)&?(.*)&?$
     RewriteCond %2 !=not-so-secret-value
