@@ -23,16 +23,16 @@ cat ~/.ssh/id_rsa.pub
 ```
 git config --global user.name "chuanfeng";
 git config --global user.email "i@liuchuanfeng.cn";
-git config --global alias.amend "commit --amend -C HEAD";
-git config --global alias.back "reset --soft HEAD^";
+
 git config --global alias.br branch;
 git config --global alias.ci commit -am;
 git config --global alias.co checkout;
-git config --global alias.edit "commit -am 'edit'";
 git config --global alias.ls "log --pretty=format:'%ad %C(yellow)%h %C(reset)%s %C(red)%d' --decorate --date=format:'%Y/%m/%d %H:%M'";
 git config --global alias.st status;
-git config --global alias.zip "archive master --format=zip --output ../code.zip"
+
+git config --global alias.amend "commit --amend -C HEAD";
 git config --global alias.showcommit "show --shortstat --pretty=format:'%ai %C(yellow)%h %C(reset)%s %C(red)%d'"
+git config --global alias.zip "archive master --format=zip --output ../code.zip"
 ```
 
 **其他配置**
@@ -312,6 +312,7 @@ git config --global gui.encoding utf-8
     du -hs .git/objects
 
     git gc --aggressive
+    git prune
     git fsck
     ```
 
